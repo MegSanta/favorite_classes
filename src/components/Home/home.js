@@ -1,6 +1,6 @@
 // React functions take props as arguments
 import React, {useState} from 'react';
-import Class from '../class/class';
+import Class from '../class/class'; 
 import "./home.css"
 
 function Home(props){
@@ -33,7 +33,7 @@ function Home(props){
 
     return(
         <div>
-            <h1>Hello World!</h1>
+            <h1>Make a list of your favorite classes!</h1>
             {/*onSubmit connects the form submission to the handleSubmit function*/}
             <form onSubmit = {handleSubmit}>
                 <label>Add Favorite Class</label>
