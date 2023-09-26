@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import Class from '../class/class'; 
 import "./home.css"
+import ClassGraphQL from '../class/classGraphQL';
 
 function Home(props){
     {/*keep track of the value of the text input favorite class*/}
@@ -13,7 +14,8 @@ function Home(props){
     {/*to handle a change on a text. It takes an event as an argument*/}
     const handleChange = (event) => {
         {/*stores the text input from that is put into the input box*/}
-        setValue(event.target.value);
+        const newValue = event.target.value.replace(/\s/g, '').toUpperCase();
+        setValue(newValue);
     }
 
     const handleSubmit = (event) => {
@@ -47,6 +49,13 @@ function Home(props){
                 {favoriteClasses.map((favClass) =>
                     // <p key={favClass}>{favClass}</p> */
                     <Class name={favClass} key={favClass}></Class>
+                )}
+            </div>
+            <div className="my-classes">
+                {/*use curly brackets when adding javascript*/}
+                {favoriteClasses.map((favClass) =>
+                    // <p key={favClass}>{favClass}</p> */
+                    <ClassGraphQL name={favClass} key={favClass}></ClassGraphQL>
                 )}
             </div>
         </div>
